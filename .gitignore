@@ -1,0 +1,7 @@
+/venv
+
+# Downloaded files
+/output
+
+# IDE
+/.idea
