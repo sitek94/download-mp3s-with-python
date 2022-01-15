@@ -1,10 +1,10 @@
-from tqdm import tqdm
+import os
+
 import requests
+from tqdm import tqdm
 
-download_dir = 'output/'
 
-
-def download_mp3_files(urls):
+def download_mp3_files(urls, download_dir):
     """
     Downloads mp3 files from a url list
     """
@@ -18,7 +18,8 @@ def download_mp3_files(urls):
             progress_bar = tqdm(total=total_size_in_bytes, unit='iB', unit_scale=True, colour='blue')
 
             if response.status_code == 200:
-                with open('output/' + name + '.mp3', 'wb') as file:
+                path = os.path.join(download_dir, name + '.mp3')
+                with open(path, 'wb') as file:
                     for data in response.iter_content(block_size):
                         progress_bar.update(len(data))
                         file.write(data)
