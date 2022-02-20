@@ -10,7 +10,7 @@ program, to do that for me.
 # Clone the repo
 git clone https://github.com/sitek94/download-mp3s-with-python
 
-# Setup virtual environemnent, install dependencies and run the program
+# Setup virtual environment, install dependencies and run the program
 make run
 ```
 
